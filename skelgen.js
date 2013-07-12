@@ -18,6 +18,7 @@ var baseName = function ( file ) {
 var getFile = function ( ) {
   if ( ! process.argv[2] ) {
     console.error( 'usage: node', process.argv[1], '[file] > [outputfile]' );
+    console.error( '(or node', process.argv[1], '[file] | node)' );
     process.exit( 1 );
   }
   var file = process.argv[2];
@@ -28,24 +29,29 @@ var getFile = function ( ) {
 };
 
 var writeTests = function ( methodName ) {
-  return '  /* @todo parse the file and use real inputs / @assert rules */\n' +
-    '  ' + methodName + ': {\n' +
+  var test = '  // @todo parse the file and use params / @assert rules\n' +
+    '  \'' + methodName + '\': {\n' +
     '    \'handles good input\': function ( ) {\n' +
     '      /* var result = ' + methodName + '( );\n' +
     '      var expect = { };\n' +
     '      assert.equal( result, expect ); */\n' +
     '    },\n' +
-    '    \'handles bad input\': function ( ) {\n' +
-    '      var inputs = [ \'foo\', 66, undefined,' +
-    ' null, [ ], { }, new Date( ) ];\n' +
-    '      var expect = null;\n' +
-    '      var result;\n' +
-    '      for ( var i = 0; i < inputs.length; i ++ ) {\n' +
-    '        result = ' + methodName + '( inputs[ i ] );\n' +
-    '        assert.equal( result, expect );\n' +
-    '      }\n' +
-    '    }\n' +
+    '    \'handles bad input\': {\n';
+  var inputs = [ 'foo', 66, undefined, null, [ ], { }, new Date( ) ];
+  for ( var i = 0; i < inputs.length; i ++ ) {
+    if ( i ) {
+      test += ',\n';
+    }
+    var data = JSON.stringify( inputs[ i ] );
+    test += '      \'handles ' + data + '\': function ( ) {\n' +
+      '        var expect = null;\n' +
+      '        var result = ' + methodName + '( ' + data + ' );\n' +
+      '          assert.equal( result, expect );\n' +
+      '      }';
+  }
+  test += '\n    }\n' +
     '  }';
+  return test;
 };
 
 var file = getFile( );
