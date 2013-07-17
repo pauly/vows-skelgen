@@ -1,0 +1,17 @@
+{
+  "name": "vows-skelgen",
+  "version": "0.1.0",
+  "dependencies": {
+    "vows": "0.7.0",
+    "assert": "0.4.9"
+  },
+  "engines": {
+    "node": "0.8.23"
+  },
+  "author":
+    "Paul Clarke <pauly@clarkeology.com> (http://www.clarkeology.com/blog/)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pauly/vows-skelgen.git"
+  }
+}
