@@ -18,7 +18,5 @@ skelgen tests itself:
 ## todo
 
  * package it up
- * detect methods in an instantiated file
-   * test files starting with a capital letter that return a function?
  * parse original file for comments with @assert in them?
  * have an option to create the file from the tests instead
