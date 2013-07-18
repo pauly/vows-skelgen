@@ -3,11 +3,15 @@
 Vows skeleton test generator. 
 Looks in your file for public methods, and writes skeleton tests for them.
 
-## usage
+## installation
+
     git clone https://github.com/pauly/vows-skelgen.git
     cd vows-skelgen
     npm install
-    node skelgen.js lib/skelgen.js > test/skelgen.js
+
+## usage
+
+    skelgen.js lib/skelgen.js > test/skelgen.js
 
 ## tests
 
