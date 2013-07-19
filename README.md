@@ -13,6 +13,10 @@ Looks in your file for public methods, and writes skeleton tests for them.
 
     skelgen.js lib/skelgen.js > test/skelgen.js
 
+or just to give your module a punishment beating without saving the skeleton test
+
+    skelgen.js lib/skelgen.js | node
+
 ## tests
 
 skelgen tests itself:
