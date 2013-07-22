@@ -13,9 +13,17 @@ Looks in your file for public methods, and writes skeleton tests for them.
 
     skelgen.js lib/skelgen.js > test/skelgen.js
 
+or to test just one method
+
+    skelgen.js lib/skelgen.js generate > test/generate.js
+
 or just to give your module a punishment beating without saving the skeleton test
 
     skelgen.js lib/skelgen.js | node
+
+or to try just one method
+
+    skelgen.js lib/skelgen.js generate | node
 
 ## tests
 
@@ -26,5 +34,4 @@ skelgen tests itself:
 ## todo
 
  * package it up
- * parse original file for comments with @assert in them?
  * have an option to create the file from the tests instead
