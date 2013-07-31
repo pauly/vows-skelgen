@@ -1,9 +1,11 @@
 {
   "name": "vows-skelgen",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {
     "vows": "0.7.0",
-    "assert": "0.4.9"
+    "assert": "0.4.9",
+    "optimist": "0.6.0",
+    "path": "0.4.9"
   },
   "engines": {
     "node": "0.8.23"
@@ -13,5 +15,8 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:pauly/vows-skelgen.git"
-  }
+  },
+  "keywords": [ "vows", "test" ],
+  "homepage": "http://clarkeology.com/m/22176/Vows+skeleton+test+generator",
+  "main": "./skelgen.js"
 }
