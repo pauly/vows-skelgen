@@ -26,6 +26,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.sanitise( [] );
           skelgen.sanitise( {} );
           skelgen.sanitise( new Date( ) );
+          skelgen.sanitise( function( ){ } );
         }
       );
     }
@@ -68,6 +69,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.baseName( [] );
           skelgen.baseName( {} );
           skelgen.baseName( new Date( ) );
+          skelgen.baseName( function( ){ } );
         }
       );
     }
@@ -88,6 +90,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.writeTests( [],[] );
           skelgen.writeTests( {},{} );
           skelgen.writeTests( new Date( ),new Date( ) );
+          skelgen.writeTests( function( ){ },function( ){ } );
         }
       );
     }
@@ -107,6 +110,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.stringify( [] );
           skelgen.stringify( {} );
           skelgen.stringify( new Date( ) );
+          skelgen.stringify( function( ){ } );
         }
       );
     }
@@ -127,6 +131,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.map( [] );
           skelgen.map( {} );
           skelgen.map( new Date( ) );
+          skelgen.map( function( ){ } );
         }
       );
     }
@@ -147,6 +152,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.asyncTests( [],[] );
           skelgen.asyncTests( {},{} );
           skelgen.asyncTests( new Date( ),new Date( ) );
+          skelgen.asyncTests( function( ){ },function( ){ } );
         }
       );
     }
@@ -167,6 +173,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.commentBefore( [] );
           skelgen.commentBefore( {} );
           skelgen.commentBefore( new Date( ) );
+          skelgen.commentBefore( function( ){ } );
         }
       );
     }
@@ -189,6 +196,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.assertsFrom( [] );
           skelgen.assertsFrom( {} );
           skelgen.assertsFrom( new Date( ) );
+          skelgen.assertsFrom( function( ){ } );
         }
       );
     }
@@ -209,6 +217,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.goodInputTests( [],[] );
           skelgen.goodInputTests( {},{} );
           skelgen.goodInputTests( new Date( ),new Date( ) );
+          skelgen.goodInputTests( function( ){ },function( ){ } );
         }
       );
     }
@@ -229,6 +238,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.goodInputTestsAsync( [],[] );
           skelgen.goodInputTestsAsync( {},{} );
           skelgen.goodInputTestsAsync( new Date( ),new Date( ) );
+          skelgen.goodInputTestsAsync( function( ){ },function( ){ } );
         }
       );
     }
@@ -249,6 +259,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.syncTests( [],[] );
           skelgen.syncTests( {},{} );
           skelgen.syncTests( new Date( ),new Date( ) );
+          skelgen.syncTests( function( ){ },function( ){ } );
         }
       );
     }
@@ -269,6 +280,7 @@ vows.describe( 'skelgen' ).addBatch( {
           skelgen.generate( [] );
           skelgen.generate( {} );
           skelgen.generate( new Date( ) );
+          skelgen.generate( function( ){ } );
         }
       );
     }
