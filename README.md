@@ -12,30 +12,27 @@ Looks in your file for public methods, and writes skeleton tests for them.
 
 ## usage
 
-to give your module a punishment beating without saving the skeleton test
+save your tests to a file
 
-    skelgen.js lib/skelgen.js | mocha
-
+    skelgen.js lib/skelgen.js --output test/skelgen.js && mocha $_ # writes relative paths into the file
+    skelgen.js lib/skelgen.js > test/skelgen.js && mocha $_ # writes absolute paths into the file
+    mocha test/skelgen.js
+ 
 or to test just one method
 
-    skelgen.js lib/skelgen.js generate | mocha
-
-to save your tests to a file
-
-    skelgen.js lib/skelgen.js --output test/skelgen.js # writes relative paths into the file
-    skelgen.js lib/skelgen.js > test/skelgen.js # writes absolute paths into the file
-
-you can also use the --method param as above
-
-    skelgen.js lib/skelgen.js --method generate > test/generate.js
+    skelgen.js lib/skelgen.js --method generate --output test/generate.js && mocha $_
 
 ## tests
 
 skelgen tests itself:
 
-    node skelgen.js lib/skelgen.js | mocha
+    node skelgen.js lib/skelgen.js --output test/skelgen.js && mocha $_
 
 ## todo
 
  * package it up
  * have an option to create the file from the tests instead
+
+## history
+
+Previously known as https://github.com/pauly/vows-skelgen
