@@ -1,23 +1,24 @@
-# vows-skelgen
+# js-skelgen
 
-Vows skeleton test generator. 
+Node skeleton test generator. 
 Looks in your file for public methods, and writes skeleton tests for them.
 
 ## installation
 
-    git clone https://github.com/pauly/vows-skelgen.git
-    cd vows-skelgen
+    git clone https://github.com/pauly/js-skelgen.git
+    cd js-skelgen
+    npm install -g mocha
     npm install
 
 ## usage
 
 to give your module a punishment beating without saving the skeleton test
 
-    skelgen.js lib/skelgen.js | node
+    skelgen.js lib/skelgen.js | mocha
 
 or to test just one method
 
-    skelgen.js lib/skelgen.js generate | node
+    skelgen.js lib/skelgen.js generate | mocha
 
 to save your tests to a file
 
@@ -32,7 +33,7 @@ you can also use the --method param as above
 
 skelgen tests itself:
 
-    node skelgen.js lib/skelgen.js | node
+    node skelgen.js lib/skelgen.js | mocha
 
 ## todo
 
