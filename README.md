@@ -8,6 +8,9 @@ Looks in your file for public methods, and writes skeleton tests for them.
     git clone https://github.com/pauly/vows-skelgen.git
     cd vows-skelgen
     npm install
+    sudo make install
+
+you need sudo to write to /usr/local/bin - see the Makefile
 
 ## usage
 
@@ -28,7 +31,25 @@ you can also use the --method param as above
 
     skelgen.js lib/skelgen.js --method generate > test/generate.js
 
-## tests
+## Tests
+
+Write phpdoc style comment blocks (with /** to start) to generate tests, like
+
+    /**
+     * @assert ( 'foo' ) === 'bar'
+     */
+
+Also link to your fixtures in the same way (bit wacky maybe)
+
+    /**
+     * @assert ( 'foo' ) === 'bar'
+     * @fixture ../test/fixture/foo.js
+     */
+
+The path of the fixture should be relative to the file it is referenced in.
+Then when you create the output file (with --output) it will work out the path
+of the fixture relative to the output file.
+Fixtures only work if you use the --output option.
 
 skelgen tests itself:
 
