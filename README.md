@@ -1,12 +1,12 @@
-# vows-skelgen
+# js-skelgen
 
-Vows skeleton test generator. 
+Skeleton test generator. 
 Looks in your file for public methods, and writes skeleton tests for them.
 
 ## installation
 
-    git clone https://github.com/pauly/vows-skelgen.git
-    cd vows-skelgen
+    git clone https://github.com/pauly/js-skelgen.git
+    cd js-skelgen
     npm install
     sudo make install
 
@@ -53,7 +53,7 @@ Fixtures only work if you use the --output option.
 
 skelgen tests itself:
 
-    node skelgen.js lib/skelgen.js | node
+    skelgen lib/skelgen.js --mochaRunner ./mochaRunner.js --output test/skelgen.js && node $_
 
 ## todo
 
