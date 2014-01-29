@@ -3,6 +3,11 @@
 Vows skeleton test generator. 
 Looks in your file for public methods, and writes skeleton tests for them.
 
+## deprecated
+
+Recommend checking out branch mocha2 instead and testing with mocha.
+I will start a new repo for this...
+
 ## installation
 
     git clone https://github.com/pauly/vows-skelgen.git
