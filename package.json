@@ -1,5 +1,5 @@
 {
-  "name": "vows-skelgen",
+  "name": "js-skelgen",
   "version": "0.2.0",
   "dependencies": {
     "vows": "0.7.0",
@@ -10,13 +10,30 @@
   "engines": {
     "node": "0.8.23"
   },
-  "author":
-    "Paul Clarke <pauly@clarkeology.com> (http://www.clarkeology.com/blog/)",
+  "author": "Paul Clarke <pauly@clarkeology.com> (http://www.clarkeology.com/blog/)",
   "repository": {
     "type": "git",
     "url": "git@github.com:pauly/vows-skelgen.git"
   },
-  "keywords": [ "vows", "test" ],
+  "config": {
+    "bin_folder": "/usr/local/sbin"
+  },
+  "scripts": {
+    "lint": "make-up lint test",
+    "test": "./skelgen.js lib/skelgen.js --output test/skelgen.js && mocha test/skelgen.js",
+    "posttest": "npm run lint",
+    "postinstall": "echo $(pwd)/skelgen.js > $npm_package_config_bin_folder/skelgen.js && chmod +x $npm_package_config_bin_folder/skelgen.js"
+  },
+  "keywords": [
+    "vows",
+    "test"
+  ],
   "homepage": "http://clarkeology.com/m/22176/Vows+skeleton+test+generator",
-  "main": "./skelgen.js"
+  "main": "./skelgen.js",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "dirty-chai": "^1.2.2",
+    "make-up": "^9.1.0",
+    "mocha": "^2.4.5"
+  }
 }

@@ -8,30 +8,26 @@ Looks in your file for public methods, and writes skeleton tests for them.
     git clone https://github.com/pauly/js-skelgen.git
     cd js-skelgen
     npm install
-    sudo make install
-
-you need sudo to write to /usr/local/bin - see the Makefile
 
 ## usage
 
-to give your module a punishment beating without saving the skeleton test
+save your tests to a file
 
-    skelgen.js lib/skelgen.js | node
+    skelgen.js lib/skelgen.js --output test/skelgen.js && mocha test/generate.js # writes relative paths into the file
 
-or to test just one method
+or test just one method
 
-    skelgen.js lib/skelgen.js generate | node
-
-to save your tests to a file
-
-    skelgen.js lib/skelgen.js --output test/skelgen.js # writes relative paths into the file
-    skelgen.js lib/skelgen.js > test/skelgen.js # writes absolute paths into the file
-
-you can also use the --method param as above
-
-    skelgen.js lib/skelgen.js --method generate > test/generate.js
+    skelgen.js lib/skelgen.js --method generate --output test/generate.js && mocha test/generate.js
 
 ## Tests
+
+skelgen tests itself:
+
+    npm test
+
+## JSDoc style tests DEPRACATED
+
+I thought this was a great idea, no-one agreed...
 
 Write phpdoc style comment blocks (with /** to start) to generate tests, like
 
@@ -51,11 +47,7 @@ Then when you create the output file (with --output) it will work out the path
 of the fixture relative to the output file.
 Fixtures only work if you use the --output option.
 
-skelgen tests itself:
-
-    skelgen lib/skelgen.js --mochaRunner ./mochaRunner.js --output test/skelgen.js && node $_
-
 ## todo
 
  * package it up
- * have an option to create the file from the tests instead
+ * have an option to create the file from the tests instead?
