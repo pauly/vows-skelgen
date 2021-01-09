@@ -1,6 +1,6 @@
 // showDiscount.js
-var priceUtils = require( './priceUtils.js' );
-var product = {
+const priceUtils = require('./priceUtils.js')
+const product = {
   price: 900
-};
-console.log( priceUtils.getDiscount( product )); // oops
+}
+console.log(priceUtils.getDiscount(product)) // oops

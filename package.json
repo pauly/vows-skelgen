@@ -2,32 +2,47 @@
   "name": "js-skelgen",
   "version": "0.2.0",
   "dependencies": {
+    "chai": "^4.2.0",
+    "dirty-chai": "^2.0.1",
+    "eslint": "^7.17.0",
     "minimist": "^1.2.0",
-    "path": "0.4.9"
+    "mocha": "^8.2.1",
+    "path": "0.4.9",
+    "standard": "^16.0.3"
   },
   "author": "Paul Clarke <pauly@clarkeology.com> (http://www.clarkeology.com/blog/)",
   "repository": {
     "type": "git",
-    "url": "git@github.com:pauly/js-skelgen.git"
+    "url": "git+ssh://git@github.com/pauly/js-skelgen.git"
   },
   "config": {
     "bin_folder": "/usr/local/sbin"
   },
   "scripts": {
-    "lint": "make-up lint test",
+    "lint": "standard",
     "test": "$npm_package_main lib/skelgen.js --output test/skelgen.js && mocha test/skelgen.js",
     "posttest": "npm run lint",
     "postinstall": "rm $npm_package_config_bin_folder/skelgen.js 2>/dev/null; ln -s $(pwd)/skelgen.js $npm_package_config_bin_folder/skelgen.js && chmod +x $npm_package_config_bin_folder/skelgen.js"
   },
+  "standard": {
+    "globals": [
+      "it",
+      "describe"
+    ]
+  },
   "keywords": [
     "test"
   ],
-  "homepage": "http://clarkeology.com/m/22176/Vows+skeleton+test+generator",
+  "homepage": "http://clarkeology.com/m/22176",
   "main": "./skelgen.js",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "dirty-chai": "^1.2.2",
-    "make-up": "^9.1.0",
-    "mocha": "^2.4.5"
-  }
+  "devDependencies": {},
+  "description": "Skeleton test generator.  Looks in your file for public methods, and writes skeleton tests for them.",
+  "bugs": {
+    "url": "https://github.com/pauly/js-skelgen/issues"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "license": "ISC"
 }
